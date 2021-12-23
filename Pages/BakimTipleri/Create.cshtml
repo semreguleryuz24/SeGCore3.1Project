@@ -1,0 +1,49 @@
+﻿@page
+@model SeGCore3._1Project.Pages.BakimTipleri.CreateModel
+<br />
+    <
+<br />
+<h2 class="text-info">Yeni Bakım tipi Oluştur</h2>
+<br />
+
+<form  method="post">
+    <div class="border backgroundwhite">
+        @*<input type="hidden" asp-for="BakimTipi.Id" />*@
+        <div class="form-group row">
+            <div class="col-3">
+                @*<label asp-for="BakimTipi.BakimAdi"></label>*@
+                <label class="font-weight-bold">Bakım Adı :</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="BakimTipi.BakimAdi" class="form-control" />
+
+            </div> 
+            <span asp-validation-for="BakimTipi.BakimAdi" class="text-danger "></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 ">
+                <label class="font-weight-bold">Bakım Fiyatı :</label>
+                @*<label asp-for="BakimTipi.BakimFiyati"></label>*@
+            </div>
+            <div class=" col-3">
+                <input asp-for="BakimTipi.BakimFiyati" class="form-control" />
+            </div>
+            <span asp-validation-for="BakimTipi.BakimFiyati" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-4 offset-3">
+                <input type="submit" class="btn btn-info form-control"value="Oluştur"/>
+            </div>
+            <div class="col-5">
+                <a asp-page="Index" class="btn btn-success form-control" >Listeye Geri Dön</a>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+@section Scripts{ 
+    @{ 
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

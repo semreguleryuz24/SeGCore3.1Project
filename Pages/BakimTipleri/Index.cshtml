@@ -1,0 +1,77 @@
+﻿@page
+@model SeGCore3._1Project.Pages.BakimTipleri.IndexModel
+
+<br />
+<br />
+<div class="backgroundwhite">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info"> Bakım Tipleri</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-page="Create" class="btn btn-info">Yeni Bakım Tipi Oluştur</a>
+        </div>
+    </div>
+    @if (Model.BakimTipi.Count == 0)
+    {
+        <p> Herhangi bir bakım tipi bulunamadı.Lütfen bir bakım tipi oluşturunuz.!</p>
+    }
+    else
+    {
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th>
+                    Bakım Adı
+                    @*@Html.DisplayFor(x => x.BakimTipi[0].BakimAdi)*@
+                </th>
+                <th>
+                    Bakım Fiyatı 
+                    @*@Html.DisplayFor(x => x.BakimTipi[0].BakimFiyati)*@
+                </th>
+                <th></th>
+
+            </tr>
+
+
+            @foreach (var item in Model.BakimTipi)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => item.BakimAdi)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(x => item.BakimFiyati)
+                    </td>
+                    <td></td>
+
+
+
+
+
+                </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+        </table>
+    }
+
+</div>
